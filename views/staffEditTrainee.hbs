@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+<body class="sb-nav-fixed">
+    {{> staffHeader}}
+    <div class="modal-dialog modal-lg" role="document" style="margin-top: 0,5%; margin-left: 20%">
+        <div class="modal-content">
+           <center> <div class="modal-header">
+                <h2 class="modal-title">Update Trainee </h2>
+            </div></center>
+            <div class="modal-body">
+                <div class="py-1">
+
+                    <form class="form" method="POST" action="/doEditTrainee">
+                        
+                            <div class="col"></div>
+                                
+                                    <div class="col">
+                                        <input type="hidden" name="id" value="{{aTrainee.id}}">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input class="form-control" type="text" name="name" value="{{aTrainee.name}}">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Mail</label>
+                                            <input class="form-control" type="text" name="email" value="{{aTrainee.email}}">
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Age</label>
+                                            <input class="form-control"  name="date" value="{{aTrainee.dateOfBirth}}">
+                                        </div>
+                                    </div>
+                                    <div class="col mb-3">
+                                        <div class="form-group">
+                                            <label>Hometown</label>
+                                            <input class="form-control" type="text" name="education"
+                                                value="{{aTrainee.education}}">
+                                       
+                             
+                        </div>
+                        <div class="row">
+                          <center> <div class="col d-flex justify-content-end"></div>
+                                <button type="submit">Update</button>
+                                <button href="/staff/trainee">Cancel</button>
+                            </div></center> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

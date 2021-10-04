@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="sb-nav-fixed">
+    {{> head}}
+    {{> staffHeader}}
+
+    <div class="container py-5" style="margin-top: 1%; margin-left: 15%">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="container">
+                    <div class="row">
+                        <div class="col" style="margin-left: 2%">
+                            <a href="/staff/AssignT" class="btn btn-primary" style="margin-left: 35%;">
+                                <span><strong>Add Trainee</strong></span>
+                            </a>
+                        </div>
+                        <div class="col">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="e-panel card" style="width: 90%; margin-right: 1%">
+            <div class="card-body">
+                <div class="card-title">
+                </div>
+                <div class="e-table">
+                    <div class="table-responsive table-lg mt-3">
+                        <table class="table table-bordered">
+                            <thead>
+
+                                <tr>
+                                    <th class="max-width" style="text-align:center">Course Name</th>
+                                    <th class="max-width" style="text-align:center">Course Category</th>
+                                    <th class="sortable" style="text-align:center">Total Trainee</th>
+                                    <th style="text-align:center">Update/Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each _course_detail}}
+                                <tr>
+                                    <td class="text-nowrap" style="text-align:center"><span>{{name}}</span></td>
+                                    <td class="text-nowrap" style="text-align:center"><span>{{category}}</span></td>
+                                    <td class="text-nowrap" style="text-align:center"><span>{{trainees.length}}</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="btn-group align-top">
+                                            <a href="/staff/courseDetail/view?id={{_id}}" class="btn btn-success">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                                <span><strong>View</strong></span>
+                                            </a>
+                                            <a href="/staff/courseDetail/delete?id={{_id}}"
+                                                onclick="return confirm('Are you sure?')" class="btn btn-danger">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                                <span><strong>Delete</strong></span>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

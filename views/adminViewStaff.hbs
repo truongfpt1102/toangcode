@@ -1,0 +1,63 @@
+<html lang="en">
+
+{{> head}}
+
+<body class="sb-nav-fixed">
+  {{> adminHeader}}
+  <div class="container py-5" style="margin-top: 1%; margin-left: 10%">
+    <center>
+      <div class="form-group">
+   
+        <div class="input-group">
+          <a href="/admin/adminAddStaff" >
+            <span>Creat new account</span>
+          </a>
+       
+      </div>
+    </center>
+    <div class="e-panel card" style="width: 90%; margin-left: 5%">
+      <div class="card-body">
+        <div class="card-title">
+        </div>
+        <div class="e-table">
+          <div class="table-responsive table-lg mt-3">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Age</th>
+                  <th>Address</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each listStaff}}
+                <tr>
+                  <td class="text-nowrap align-middle">{{name}}</td>
+                  <td class="text-nowrap align-middle">{{email}}</td>
+                  <td class="text-nowrap align-middle">{{age}}</td>
+                  <td class="text-nowrap align-middle">{{address}}</td>
+                  <td class="text-center align-middle">
+                    <div class="btn-group align-top">
+                      <a href="/admin/adminEditStaff?id={{_id}}" >
+                        <span>Update</span>
+                      </a>
+                      <a href="/admin/adminDeleteStaff?id={{_id}}"  onclick="return confirm('Are you sure')">
+                        <span>Delete</span>
+                      </a>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

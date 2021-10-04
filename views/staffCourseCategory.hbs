@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head}}
+
+<body class="sb-nav-fixed">
+    {{> staffHeader}}
+
+    <div class="container py-5" style="margin-top: 1%; margin-left: 10%">
+            <div class="form-group">
+                  <center><a href="/staff/courseCategory/add" class="" >
+                      <span>Add Course Category</span>
+                    </a>
+                </div></center>  
+            </div>
+        
+        <div class="e-panel card" style="width: 70%; margin-left: 20%">
+            <div class="card-body">
+                <div class="card-title">
+                </div>
+                <div class="e-table">
+                    <div class="table-responsive table-lg mt-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="max-width" style="text-align:center">Course Category Name</th>
+                                    <th style="text-align:center">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each categories}}
+                                <tr>
+                                    <td class="text-nowrap align-middle">{{categoryName}}</td>
+                                    <td class="text-nowrap align-middle"><span>{{description}}</span></td>
+                                    <td class="text-center align-middle">
+                                        <div class="btn-group align-top">
+                                            <a href="/staff/courseCategory/edit?id={{id}}" class=""></span>
+                                                <span>Update</span>
+                                            </a>
+                                            <a href="/staff/courseCategory/delete?id={{id}}" class="" onclick="return confirm('Are you sure')">
+                                                </span>
+                                                <span>Delete</span>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head}}
+
+<body class="sb-nav-fixed">
+    {{> staffHeader}}
+    <div class="modal-dialog modal-lg" role="document" style="margin-top: 5%; margin-left: 20%">
+        <div class="modal-content">
+            <div class="modal-header">
+              <center>  <h2 class="modal-title">Update Course Category </h2></center>
+            </div>
+            <div class="modal-body">
+                <div class="py-1">
+                    <form class="form" method="POST" action="/doEditCategory">
+                     
+                            <div class="col"></div>
+                        
+                                    <div class="col">
+                                        <input type="hidden" name="id" value="{{aCategory.id}}">
+                                        <div class="form-group">
+                                            <label>Course Category Name</label>
+                                            <input class="form-control" type="text" name="name" value="{{aCategory.categoryName}}">
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                    <div class="col mb-3">
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea class="form-control" name="description" rows="5">{{aCategory.description}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"><center>
+                            <div class="col d-flex justify-content-end">
+                                <button class="btn btn-primary" type="submit">Update</button>
+                                <a href="/staff/courseCategory" class="btn btn-primary">Cancel</a></center>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

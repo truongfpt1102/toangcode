@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body class="sb-nav-fixed">
+    {{> staffHeader}}
+
+
+    <div class="modal-dialog modal-lg" role="document" style="margin-top: 5%; margin-left: 20%">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 class="modal-title">Create a Course</h2>
+            </div>
+
+            <div class="modal-body">
+                <div class="py-1">
+                    <form class="form" method="post" action='/doAddCourse'>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label>Course Name</label>
+                                        <input class="form-control" type="text" value="{{old.name}}" name="name"
+                                            placeholder="Course Name">
+                                        <span class="helper-text text-danger">{{errors.err_courseName}}</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Course Category</label>
+                                        <select name="category" class="form-select"
+                                            aria-label="Disabled select example">
+                                            {{#each _categories}}
+                                            <option value="{{categoryName}}" selected>{{categoryName}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea class="form-control" type="text" name="description" rows="5"
+                                            placeholder="Description">{{old.description}}</textarea>
+                                        <span class="helper-text text-danger">{{errors.err_description}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col d-flex justify-content-end">
+                                <button class="btn btn-primary" type="submit">Save</button>
+                                <a href="/staff/course" class="btn btn-warning">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head}}
+<body class="sb-nav-fixed">
+    {{> staffHeader}}
+    <div class="modal-dialog modal-lg" role="document" style="margin-top: 1%; margin-left: 20%">
+        <div class="modal-content">
+           <center> <div class="modal-header">
+                <h2 class="modal-title">Update Course </h2>
+            </div></center>
+            <div class="modal-body">
+                <div class="py-1">
+                    <form class="form" method="post" action="/doEditCourse">
+                        <div class="row"></div>
+                            <div class="col"></div>
+                               
+                                   
+                                        <div class="form-group">
+                                            <label>Course Name</label>
+                                            <input type="hidden" name="id" value="{{_course._id}}">
+                                            <input class="form-control" type="text" value="{{_course.name}}" name="name">
+                                        </div>
+                                    </div>
+                                   
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect1">Course Category</label>
+                                            <select name="category" class="form-select"
+                                                aria-label="Disabled select example">
+                                            {{#each _categories}}
+                                                <option value="{{categoryName}}" selected>{{categoryName}}</option>
+                                            {{/each}}
+                                            </select>
+                                        </div>
+                                  
+                                  
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea name="description" class="form-control" rows="5"
+                                               >{{_course.description}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          <center><div class="row">
+                                <div class="col d-flex justify-content-end">
+                                    <button class="btn btn-primary" type="submit">Update</button>
+                                    <a href="/staff/trainee" class="btn btn-primary">Cancel</a>
+                                </div>
+                            </div>
+                            </center>  
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

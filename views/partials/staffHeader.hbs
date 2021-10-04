@@ -1,0 +1,50 @@
+<header>
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+       <center> <b style="font-size: 30px">‎‎‎Education Management System</b> </a></center>
+   
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4"></ul>
+                    {{#if loginName}}
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">{{loginName}}<i
+                            class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!"></a></li>
+                        <li><a class="dropdown-item" href="#!"></a></li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    </ul>
+                    {{/if}}
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav" style="font-size: 20.5px; ">
+
+                        <a class="nav-link" href="/staff/trainee" style="text-decoration: none;">
+                            <div class="sb-nav-link-icon"></i></div>
+                            Trainee List
+                        </a>
+                        <a class="nav-link" href="/staff/courseCategory" style="text-decoration: none; ">
+                            <div class="sb-nav-link-icon"></i></div>
+                            Categories Course
+                        </a>
+                        <a class="nav-link" href="/staff/course" style="text-decoration: none; ">
+                            <div class="sb-nav-link-icon"></i></div>
+                            Course
+                        </a>
+                        <a class="nav-link" href="/staff/CourseDetail" style="text-decoration: none; ">
+                            <div class="sb-nav-link-icon"></i></div>
+                            Course Detail
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

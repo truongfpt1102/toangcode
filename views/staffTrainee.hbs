@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{> head}}
+
+<body class="sb-nav-fixed">
+    {{> staffHeader}}
+    <div class="container py-5" style="margin-top: 3%; margin-left: 15%">
+        <center>
+            <div class="form-group">
+                <div class="input-group">
+                    <a href="/staff/trainee/add" >
+                        <span>Add Trainee</span>
+                    </a>
+                  
+                </div>
+            </div>
+        </center>
+        <div class="e-panel card" style="width: 90%; margin-left: 5%">
+            <div class="card-body">
+                <div class="card-title">
+                </div>
+                <div class="e-table">
+                    <div class="table-responsive table-lg mt-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="max-width" style="text-align:center">Name of Trainee</th>
+                                    <th class="max-width" style="text-align:center">Mail</th>
+                                    <th class="sortable" style="text-align:center">Age</th>
+                                    <th style="text-align:center">Hometown</th>
+                                    <th style="text-align:center">Update/Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each trainees}}
+                                <tr>
+
+                                    <td class="text-nowrap align-middle">{{name}}</td>
+                                    <td class="text-nowrap align-middle">{{email}}</td>
+                                    <td class="text-nowrap align-middle"><span>{{dateOfBirth}}</span></td>
+                                    <td class="text-nowrap align-middle"><span>{{education}}</span></td>
+                                    <td class="text-center align-middle">
+                                        <div class="btn-group align-top">
+                                            <a href="/staff/trainee/edit?id={{id}}">
+                                                <span>Update</span>
+                                            </a>
+                                            <a href="/staff/trainee/delete?id={{id}}"
+                                                onclick="return confirm('Are you sure')">
+                                                <span>Delete</span>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                               {{/each}} 
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
